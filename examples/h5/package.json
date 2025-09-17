@@ -1,0 +1,12 @@
+{
+  "name": "v5",
+  "version": "1.0.0",
+  "description": "use mxcad h5",
+  "private": true,
+  "scripts": {
+    "dev": "node index",
+    "build": ""
+  },
+  "author": "",
+  "license": "ISC"
+}
