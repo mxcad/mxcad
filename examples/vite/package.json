@@ -1,0 +1,20 @@
+{
+  "name": "mxcad-vite",
+  "private": true,
+  "version": "1.0.0",
+  "description": "use vite mxcad",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^4.3.8"
+  },
+  "dependencies": {
+    "mxcad": "latest"
+  }
+}
