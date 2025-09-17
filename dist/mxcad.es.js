@@ -15079,7 +15079,7 @@ win.McDrawObjectEvent_asciiToUTF8 = function (hexstr) {
   return MxG2312Obj.decodeFromGb2312Imp(hexstr);
 };
 
-const version$1 = "1.0.330";
+const version$1 = "1.0.331";
 
 var isSharedArrayBuffer = "SharedArrayBuffer" in window;
 var isCdn = document.currentScript && /unpkg\.com\/mxcad/.test(document.currentScript.src);
@@ -16419,6 +16419,7 @@ var MxCADSelectionSet = /*#__PURE__*/function (_McRxObject2) {
     _defineProperty(_assertThisInitialized$1(_this3), "isSelectHighlight", true);
     _defineProperty(_assertThisInitialized$1(_this3), "selectPt1", new McGePoint3d());
     _defineProperty(_assertThisInitialized$1(_this3), "selectPt2", new McGePoint3d());
+    _defineProperty(_assertThisInitialized$1(_this3), "selectPoints", []);
     _this3.initTempObject(new MxCpp.mxcadassemblyimp.McDrawSelSet());
     _this3.isWhileSelect = MxFun.isPC();
     return _this3;
@@ -16430,6 +16431,11 @@ var MxCADSelectionSet = /*#__PURE__*/function (_McRxObject2) {
         pt1: this.selectPt1,
         pt2: this.selectPt2
       };
+    }
+  }, {
+    key: "getSelectPoints",
+    value: function getSelectPoints() {
+      return this.selectPoints;
     }
   }, {
     key: "allSelect",
@@ -16464,6 +16470,11 @@ var MxCADSelectionSet = /*#__PURE__*/function (_McRxObject2) {
     key: "item",
     value: function item(lItem) {
       return new McObjectId(this.imp.item(lItem), McObjectIdType.kMxCAD);
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      this.imp.clear();
     }
   }, {
     key: "forEach",
@@ -16502,6 +16513,7 @@ var MxCADSelectionSet = /*#__PURE__*/function (_McRxObject2) {
             case 0:
               filter = _args4.length > 1 && _args4[1] !== undefined ? _args4[1] : null;
               init = _args4.length > 2 ? _args4[2] : undefined;
+              this.selectPoints = [];
               this.selectPt1 = new McGePoint3d();
               this.selectPt2 = new McGePoint3d();
               getPoint = new MrxDbgUiPrPoint();
@@ -16511,78 +16523,81 @@ var MxCADSelectionSet = /*#__PURE__*/function (_McRxObject2) {
               getPoint.setCursorType(MxCursorType.kRect);
               getPoint.setDynamicInputType(DynamicInputType.kDynTip);
               getPoint.disableAllTrace();
-              getPoint.isDisableOsnap();
+              getPoint.setDisableOsnap(true);
               retcode = 0;
               init && init(getPoint);
               filterImp = getFilterImp(filter);
-            case 13:
+            case 14:
               getPoint.setDynamicInputType(DynamicInputType.kDynTip);
               getPoint.setInputToucheType(MxType.InputToucheType.kGetBegan);
-              _context4.next = 18;
+              _context4.next = 19;
               return getPoint.go();
-            case 18:
+            case 19:
               pt1 = _context4.sent;
               getPoint.clearLastInputPoint();
               retcode = getPoint.getDetailedResult();
               if (pt1) {
-                _context4.next = 23;
+                _context4.next = 24;
                 break;
               }
-              return _context4.abrupt("break", 45);
-            case 23:
+              return _context4.abrupt("break", 49);
+            case 24:
               pt1CAD = MxCoordConvert.doc2cad1(pt1);
               if (!(this.imp.userPointSelect(pt1CAD.x, pt1CAD.y, filterImp, this.isSelectHighlight) == 0 /* kSelected */)) {
-                _context4.next = 32;
+                _context4.next = 34;
                 break;
               }
               this.selectPt1.copy(pt1CAD);
               this.selectPt2.copy(pt1CAD);
+              this.selectPoints.push(pt1CAD);
               if (!this.isWhileSelect) {
-                _context4.next = 31;
+                _context4.next = 33;
                 break;
               }
-              return _context4.abrupt("continue", 13);
-            case 31:
-              return _context4.abrupt("break", 45);
-            case 32:
-              _context4.next = 34;
+              return _context4.abrupt("continue", 14);
+            case 33:
+              return _context4.abrupt("break", 49);
+            case 34:
+              _context4.next = 36;
               return MrxDbgUtils.getCorner(pt1, strPrompt, true, function (ret) {
                 retcode = ret.detailedResult;
               });
-            case 34:
+            case 36:
               pt2 = _context4.sent;
               if (pt2) {
-                _context4.next = 37;
+                _context4.next = 39;
                 break;
               }
-              return _context4.abrupt("break", 45);
-            case 37:
+              return _context4.abrupt("break", 49);
+            case 39:
               pt2CAD = MxCoordConvert.doc2cad1(pt2);
               this.imp.userSelect(pt1CAD.x, pt1CAD.y, pt2CAD.x, pt2CAD.y, filterImp, this.isSelectHighlight);
               this.selectPt1.copy(pt1CAD);
               this.selectPt2.copy(pt2CAD);
+              this.selectPoints.push(pt1CAD);
+              this.selectPoints.push(pt2CAD);
               if (this.isWhileSelect) {
-                _context4.next = 43;
+                _context4.next = 47;
                 break;
               }
-              return _context4.abrupt("break", 45);
-            case 43:
-              _context4.next = 13;
+              return _context4.abrupt("break", 49);
+            case 47:
+              _context4.next = 14;
               break;
-            case 45:
+            case 49:
               if (this.isSelectHighlight) this.imp.highlightEntity(false);
               if (!(retcode == DetailedResult.kEcsIn || retcode == DetailedResult.kNewCommadIn || retcode == DetailedResult.kUnknown)) {
-                _context4.next = 50;
+                _context4.next = 54;
                 break;
               }
               return _context4.abrupt("return", new Promise(function (resolve) {
                 resolve(false);
               }));
-            case 50:
+            case 54:
               return _context4.abrupt("return", new Promise(function (resolve) {
                 resolve(true);
               }));
-            case 51:
+            case 55:
             case "end":
               return _context4.stop();
           }
@@ -16592,6 +16607,107 @@ var MxCADSelectionSet = /*#__PURE__*/function (_McRxObject2) {
         return _userSelect2.apply(this, arguments);
       }
       return userSelect;
+    }()
+  }, {
+    key: "fenceSelect",
+    value: function () {
+      var _fenceSelect = _asyncToGenerator(/*#__PURE__*/regenerator.mark(function _callee5(strPrompt) {
+        var filter,
+          init,
+          getPoint,
+          retcode,
+          filterImp,
+          pt1CAD,
+          pt1,
+          pt2,
+          pt2CAD,
+          _args5 = arguments;
+        return regenerator.wrap(function _callee5$(_context5) {
+          while (1) switch (_context5.prev = _context5.next) {
+            case 0:
+              filter = _args5.length > 1 && _args5[1] !== undefined ? _args5[1] : null;
+              init = _args5.length > 2 ? _args5[2] : undefined;
+              this.imp.clear();
+              getPoint = new MrxDbgUiPrPoint();
+              if (strPrompt) {
+                getPoint.setMessage(strPrompt);
+              }
+              getPoint.setCursorType(MxCursorType.kCross);
+              getPoint.setDynamicInputType(DynamicInputType.kDynTip);
+              getPoint.disableAllTrace();
+              getPoint.setDisableOsnap(true);
+              retcode = 0;
+              init && init(getPoint);
+              filterImp = getFilterImp(filter);
+            case 12:
+              if (pt1CAD) {
+                _context5.next = 25;
+                break;
+              }
+              getPoint.setDynamicInputType(DynamicInputType.kDynTip);
+              getPoint.setInputToucheType(MxType.InputToucheType.kGetBegan);
+              _context5.next = 18;
+              return getPoint.go();
+            case 18:
+              pt1 = _context5.sent;
+              retcode = getPoint.getDetailedResult();
+              getPoint.clearLastInputPoint();
+              if (pt1) {
+                _context5.next = 23;
+                break;
+              }
+              return _context5.abrupt("break", 40);
+            case 23:
+              pt1CAD = MxCoordConvert.doc2cad1(pt1);
+              this.selectPoints.push(pt1CAD);
+            case 25:
+              _context5.next = 27;
+              return getPoint.go();
+            case 27:
+              pt2 = _context5.sent;
+              getPoint.clearLastInputPoint();
+              retcode = getPoint.getDetailedResult();
+              if (pt2) {
+                _context5.next = 32;
+                break;
+              }
+              return _context5.abrupt("break", 40);
+            case 32:
+              pt2CAD = MxCoordConvert.doc2cad1(pt2);
+              this.imp.fenceSelect(pt1CAD.x, pt1CAD.y, pt2CAD.x, pt2CAD.y, filterImp, this.isSelectHighlight);
+              this.selectPoints.push(pt2CAD);
+              pt2CAD = pt1CAD;
+              if (this.isWhileSelect) {
+                _context5.next = 38;
+                break;
+              }
+              return _context5.abrupt("break", 40);
+            case 38:
+              _context5.next = 12;
+              break;
+            case 40:
+              if (this.isSelectHighlight) this.imp.highlightEntity(false);
+              if (!(retcode == DetailedResult.kEcsIn || retcode == DetailedResult.kNewCommadIn || retcode == DetailedResult.kUnknown)) {
+                _context5.next = 45;
+                break;
+              }
+              return _context5.abrupt("return", new Promise(function (resolve) {
+                resolve(false);
+              }));
+            case 45:
+              return _context5.abrupt("return", new Promise(function (resolve) {
+                resolve(true);
+              }));
+            case 46:
+            case "end":
+              return _context5.stop();
+          }
+        }, _callee5, this);
+      }));
+      function fenceSelect(_x7) {
+        return _fenceSelect.apply(this, arguments);
+      }
+      return fenceSelect;
     }()
   }]);
   return MxCADSelectionSet;
@@ -42937,33 +43053,30 @@ function Mx_Trim() {
 }
 function _Mx_Trim() {
   _Mx_Trim = _asyncToGenerator(/*#__PURE__*/regenerator.mark(function _callee18() {
-    var isByWindow, isExtend, cachings, filter, getPoint, ss, aryId, aryIdLong, mxcadTrimAssert, mxcadExtendAssert, isShiftKey2, onKeydown2, onkeyup, _loop7, _ret7;
+    var filter, getPoint, ss, aryId, aryIdLong, mxcadTrimAssert, _loop7, _ret7;
     return regenerator.wrap(function _callee18$(_context25) {
       while (1) switch (_context25.prev = _context25.next) {
         case 0:
-          isByWindow = false;
-          isExtend = false;
-          cachings = [];
           filter = new MxCADResbuf();
           filter.AddMcDbEntityTypes("LINE,LWPOLYLINE,ELLIPSE,ARC,CIRCLE,SPLINE,XLINE");
           aryId = MxCADUtility.getCurrentSelect(filter);
           if (!(aryId.length === 0)) {
-            _context25.next = 16;
+            _context25.next = 12;
             break;
           }
-          _context25.next = 10;
+          _context25.next = 6;
           return MxCADUtility.userSelect("\u9009\u62E9\u5BF9\u8C61\u6216<\u5168\u90E8\u9009\u62E9>", filter, function (_ss, _getPoint) {
             getPoint = _getPoint;
             ss = _ss;
           });
-        case 10:
+        case 6:
           aryId = _context25.sent;
           if (!(getPoint.getStatus() === MrxDbgUiPrBaseReturn.kCancel)) {
-            _context25.next = 13;
+            _context25.next = 9;
             break;
           }
           return _context25.abrupt("return");
-        case 13:
+        case 9:
           if (getPoint.getStatus() === MrxDbgUiPrBaseReturn.kNone) {
             if (aryId.length === 0) {
               ss.allSelect(filter);
@@ -42973,38 +43086,22 @@ function _Mx_Trim() {
             }
           }
           if (!(aryId.length === 0)) {
-            _context25.next = 16;
+            _context25.next = 12;
             break;
           }
           return _context25.abrupt("return");
-        case 16:
+        case 12:
           aryIdLong = new McGeLongArray();
           aryIdLong.copyFormAryId(aryId);
           mxcadTrimAssert = new MxCpp.mxcadassemblyimp.MxDrawTrimAssist();
           if (mxcadTrimAssert.Init(aryIdLong.imp)) {
-            _context25.next = 21;
+            _context25.next = 17;
             break;
           }
           return _context25.abrupt("return");
-        case 21:
-          mxcadExtendAssert = new MxCpp.mxcadassemblyimp.MxDrawExtendAssist();
-          if (mxcadExtendAssert.Init(aryIdLong.imp)) {
-            _context25.next = 24;
-            break;
-          }
-          return _context25.abrupt("return");
-        case 24:
-          isShiftKey2 = false;
-          onKeydown2 = function onKeydown2(e) {
-            isShiftKey2 = e.key === "Shift";
-          };
-          window.addEventListener("keydown", onKeydown2);
-          onkeyup = function onkeyup() {
-            return isShiftKey2 = false;
-          };
-          window.addEventListener("keyup", onkeyup);
+        case 17:
           _loop7 = /*#__PURE__*/regenerator.mark(function _loop7() {
-            var ss2, getPoint2, points, pl, getKey, key, ids2, _ref13, _ref14, _ids, ents, mxcad, ids, selPoint, _pt2, pt2, _pl;
+            var ss2, getPoint2, ids, selPoint;
             return regenerator.wrap(function _loop7$(_context24) {
               while (1) switch (_context24.prev = _context24.next) {
                 case 0:
@@ -43012,9 +43109,9 @@ function _Mx_Trim() {
                   ss2.isWhileSelect = false;
                   ss2.isSelectHighlight = false;
                   _context24.next = 5;
-                  return ss2.userSelect("\u9009\u62E9\u8981\u4FEE\u526A\u7684\u5BF9\u8C61\u6216\u6309\u4F4F Shift \u952E\u9009\u62E9\u8981\u5EF6\u4F38\u7684\u5BF9\u8C61", filter, function (_getPoint) {
+                  return ss2.userSelect("\u9009\u62E9\u8981\u4FEE\u526A\u7684\u5BF9\u8C61", filter, function (_getPoint) {
                     getPoint2 = _getPoint;
-                    getPoint2.setKeyWords("[\u680F\u9009(F)/\u7A97\u4EA4(C)/\u8FB9(E)/\u5220\u9664(R)".concat(cachings.length > 0 ? "/\u653E\u5F03(U)" : "", "]"));
+                    getPoint2.setKeyWords("[\u680F\u9009(F)/\u7A97\u4EA4(C)]");
                   });
                 case 5:
                   if (_context24.sent) {
@@ -43023,194 +43120,43 @@ function _Mx_Trim() {
                   }
                   return _context24.abrupt("return", 0);
                 case 7:
-                  if (!getPoint2.isKeyWordPicked("F")) {
-                    _context24.next = 18;
-                    break;
-                  }
-                  _context24.next = 10;
-                  return getHurdleSelectionPoints();
-                case 10:
-                  points = _context24.sent;
-                  if (points) {
-                    _context24.next = 13;
-                    break;
-                  }
-                  return _context24.abrupt("return", 0);
-                case 13:
-                  pl = new McDbPolyline();
-                  points.forEach(function (point) {
-                    pl.addVertexAt(point);
-                  });
-                  cachings.push([aryId, aryId.map(function (id) {
-                    return id.clone();
-                  })]);
-                  aryId.forEach(function (objId) {
-                    var ent = objId.getMcDbEntity();
-                    if (!(ent instanceof McDbCurve)) return;
-                    var intersectPoints = ent.IntersectWith(pl, McDb.Intersect.kOnBothOperands);
-                    if (intersectPoints.isEmpty()) return;
-                    intersectPoints.forEach(function (point) {
-                      aryIdLong.copyFormAryId([objId]);
-                      isShiftKey2 ? mxcadExtendAssert.DoExtend(aryIdLong.imp, point.x, point.y, point.x, point.y) : mxcadTrimAssert.DoTrim(aryIdLong.imp, point.x, point.y, point.x, point.y);
-                    });
-                  });
-                  return _context24.abrupt("return", 1);
-                case 18:
-                  if (!getPoint2.isKeyWordPicked("C")) {
-                    _context24.next = 21;
-                    break;
-                  }
-                  isByWindow = true;
-                  return _context24.abrupt("return", 1);
-                case 21:
-                  if (!getPoint2.isKeyWordPicked("E")) {
-                    _context24.next = 39;
-                    break;
-                  }
-                  getKey = new MxCADUiPrKeyWord();
-                  getKey.setMessage("\u6307\u5B9A\u9690\u542B\u8FB9\u5EF6\u4F38\u6A21\u5F0F<".concat(isExtend ? "\u5EF6\u4F38" : "\u4E0D\u5EF6\u4F38", ">"));
-                  getKey.setKeyWords("[\u5EF6\u4F38(E)/\u4E0D\u5EF6\u4F38(N)]");
-                  _context24.next = 27;
-                  return getKey.go();
-                case 27:
-                  key = getKey.keyWordPicked();
-                  if (!(getKey.getStatus() === MrxDbgUiPrBaseReturn.kCancel)) {
-                    _context24.next = 30;
-                    break;
-                  }
-                  return _context24.abrupt("return", {
-                    v: void 0
-                  });
-                case 30:
-                  if (!(getKey.getStatus() === MrxDbgUiPrBaseReturn.kNone)) {
-                    _context24.next = 32;
-                    break;
-                  }
-                  return _context24.abrupt("return", 1);
-                case 32:
-                  if (!(getKey.getStatus() === MrxDbgUiPrBaseReturn.kKeyWord)) {
-                    _context24.next = 39;
-                    break;
-                  }
-                  if (!(key === "E")) {
-                    _context24.next = 36;
-                    break;
-                  }
-                  isExtend = true;
-                  return _context24.abrupt("return", 1);
-                case 36:
-                  if (!(key === "N")) {
-                    _context24.next = 39;
-                    break;
-                  }
-                  isExtend = false;
-                  return _context24.abrupt("return", 1);
-                case 39:
-                  if (!getPoint2.isKeyWordPicked("R")) {
-                    _context24.next = 46;
-                    break;
-                  }
-                  _context24.next = 42;
-                  return MxCADUtility.userSelect("\u9009\u62E9\u8981\u5220\u9664\u7684\u5BF9\u8C61", filter);
-                case 42:
-                  ids2 = _context24.sent;
-                  cachings.push([ids2, ids2.map(function (id) {
-                    return id.clone();
-                  })]);
-                  ids2.forEach(function (id) {
-                    id.erase();
-                  });
-                  return _context24.abrupt("return", 1);
-                case 46:
-                  if (!getPoint2.isKeyWordPicked("U")) {
-                    _context24.next = 52;
-                    break;
-                  }
-                  _ref13 = cachings.pop() || [], _ref14 = _slicedToArray$1(_ref13, 2), _ids = _ref14[0], ents = _ref14[1];
-                  _ids === null || _ids === void 0 ? void 0 : _ids.forEach(function (id) {
-                    id.erase();
-                  });
-                  mxcad = MxCpp.getCurrentMxCAD();
-                  ents === null || ents === void 0 ? void 0 : ents.forEach(function (ent) {
-                    if (ent instanceof McDbEntity) mxcad.drawEntity(ent);
-                  });
-                  return _context24.abrupt("return", 1);
-                case 52:
                   ids = ss2.getIds();
                   if (!(ids.length == 0)) {
-                    _context24.next = 55;
+                    _context24.next = 10;
                     break;
                   }
                   return _context24.abrupt("return", 1);
-                case 55:
+                case 10:
                   selPoint = ss2.getSelectPoint();
-                  if (!isByWindow) {
-                    _context24.next = 67;
-                    break;
-                  }
-                  _pt2 = selPoint.pt1, pt2 = selPoint.pt2;
-                  _pl = new McDbPolyline();
-                  _pl.addVertexAt(_pt2);
-                  _pl.addVertexAt(new McGePoint3d(_pt2.x, pt2.y));
-                  _pl.addVertexAt(pt2);
-                  _pl.addVertexAt(new McGePoint3d(pt2.x, _pt2.y));
-                  _pl.isClosed = true;
-                  cachings.push([aryId, aryId.map(function (id) {
-                    return id.clone();
-                  })]);
-                  aryId.forEach(function (objId) {
-                    var ent = objId.getMcDbEntity();
-                    if (!(ent instanceof McDbCurve)) return;
-                    var intersectPoints = ent.IntersectWith(_pl, McDb.Intersect.kOnBothOperands);
-                    if (intersectPoints.isEmpty()) return;
-                    intersectPoints.forEach(function (point) {
-                      aryIdLong.copyFormAryId([objId]);
-                      isShiftKey2 ? mxcadExtendAssert.DoExtend(aryIdLong.imp, point.x, point.y, point.x, point.y) : mxcadTrimAssert.DoTrim(aryIdLong.imp, point.x, point.y, point.x, point.y);
-                    });
-                  });
-                  return _context24.abrupt("return", 1);
-                case 67:
-                  cachings.push([ids, aryId.map(function (id) {
-                    return id.clone();
-                  })]);
                   aryIdLong.copyFormAryId(ids);
-                  isShiftKey2 ? mxcadExtendAssert.DoExtend(aryIdLong.imp, selPoint.pt1.x, selPoint.pt1.y, selPoint.pt2.x, selPoint.pt2.y) : mxcadTrimAssert.DoTrim(aryIdLong.imp, selPoint.pt1.x, selPoint.pt1.y, selPoint.pt2.x, selPoint.pt2.y);
-                case 70:
+                  mxcadTrimAssert.DoTrim(aryIdLong.imp, selPoint.pt1.x, selPoint.pt1.y, selPoint.pt2.x, selPoint.pt2.y);
+                case 13:
                 case "end":
                   return _context24.stop();
               }
             }, _loop7);
           });
-        case 30:
-          return _context25.delegateYield(_loop7(), "t0", 32);
-        case 32:
+        case 18:
+          return _context25.delegateYield(_loop7(), "t0", 20);
+        case 20:
           _ret7 = _context25.t0;
           if (!(_ret7 === 0)) {
-            _context25.next = 35;
+            _context25.next = 23;
             break;
           }
-          return _context25.abrupt("break", 41);
-        case 35:
+          return _context25.abrupt("break", 27);
+        case 23:
           if (!(_ret7 === 1)) {
-            _context25.next = 37;
+            _context25.next = 25;
             break;
           }
-          return _context25.abrupt("continue", 30);
-        case 37:
-          if (!_ret7) {
-            _context25.next = 39;
-            break;
-          }
-          return _context25.abrupt("return", _ret7.v);
-        case 39:
-          _context25.next = 30;
+          return _context25.abrupt("continue", 18);
+        case 25:
+          _context25.next = 18;
           break;
-        case 41:
-          window.removeEventListener("keydown", onKeydown2);
-          window.removeEventListener("keyup", onkeyup);
+        case 27:
           mxcadTrimAssert.UnInit();
-          mxcadExtendAssert.UnInit();
-        case 45:
+        case 28:
         case "end":
           return _context25.stop();
       }
@@ -43290,7 +43236,7 @@ function _Mx_Extend() {
           };
           window.addEventListener("keyup", onkeyup);
           _loop8 = /*#__PURE__*/regenerator.mark(function _loop8() {
-            var ss2, getPoint2, points, pl, getKey, key, _ref15, _ref16, ids2, ents, mxcad, ids, selPoint, _pt3, pt2, _pl2;
+            var ss2, getPoint2, points, pl, getKey, key, _ref13, _ref14, ids2, ents, mxcad, ids, selPoint, _pt2, pt2, _pl;
             return regenerator.wrap(function _loop8$(_context26) {
               while (1) switch (_context26.prev = _context26.next) {
                 case 0:
@@ -43396,7 +43342,7 @@ function _Mx_Extend() {
                     _context26.next = 46;
                     break;
                   }
-                  _ref15 = cachings.pop() || [], _ref16 = _slicedToArray$1(_ref15, 2), ids2 = _ref16[0], ents = _ref16[1];
+                  _ref13 = cachings.pop() || [], _ref14 = _slicedToArray$1(_ref13, 2), ids2 = _ref14[0], ents = _ref14[1];
                   console.log(ids2);
                   ids2 === null || ids2 === void 0 ? void 0 : ids2.forEach(function (id) {
                     id.erase();
@@ -43419,20 +43365,20 @@ function _Mx_Extend() {
                     _context26.next = 61;
                     break;
                   }
-                  _pt3 = selPoint.pt1, pt2 = selPoint.pt2;
-                  _pl2 = new McDbPolyline();
-                  _pl2.addVertexAt(_pt3);
-                  _pl2.addVertexAt(new McGePoint3d(_pt3.x, pt2.y));
-                  _pl2.addVertexAt(pt2);
-                  _pl2.addVertexAt(new McGePoint3d(pt2.x, _pt3.y));
-                  _pl2.isClosed = true;
+                  _pt2 = selPoint.pt1, pt2 = selPoint.pt2;
+                  _pl = new McDbPolyline();
+                  _pl.addVertexAt(_pt2);
+                  _pl.addVertexAt(new McGePoint3d(_pt2.x, pt2.y));
+                  _pl.addVertexAt(pt2);
+                  _pl.addVertexAt(new McGePoint3d(pt2.x, _pt2.y));
+                  _pl.isClosed = true;
                   cachings.push([aryId, aryId.map(function (id) {
                     return id.clone();
                   })]);
                   aryId.forEach(function (objId) {
                     var ent = objId.getMcDbEntity();
                     if (!(ent instanceof McDbCurve)) return;
-                    var intersectPoints = ent.IntersectWith(_pl2, McDb.Intersect.kOnBothOperands);
+                    var intersectPoints = ent.IntersectWith(_pl, McDb.Intersect.kOnBothOperands);
                     if (intersectPoints.isEmpty()) return;
                     intersectPoints.forEach(function (point) {
                       aryIdLong.copyFormAryId([objId]);
@@ -44096,7 +44042,7 @@ function _Mx_PasteClipboard() {
         case 0:
           getClipboardDataToFile = function _getClipboardDataToFi(storeName2, sWriteFile) {
             return new Promise(/*#__PURE__*/function () {
-              var _ref17 = _asyncToGenerator(/*#__PURE__*/regenerator.mark(function _callee28(res) {
+              var _ref15 = _asyncToGenerator(/*#__PURE__*/regenerator.mark(function _callee28(res) {
                 var db, transaction, objectStore, request;
                 return regenerator.wrap(function _callee28$(_context37) {
                   while (1) switch (_context37.prev = _context37.next) {
@@ -44124,7 +44070,7 @@ function _Mx_PasteClipboard() {
                 }, _callee28);
               }));
               return function (_x2) {
-                return _ref17.apply(this, arguments);
+                return _ref15.apply(this, arguments);
               };
             }());
           };

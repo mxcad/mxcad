@@ -2904,6 +2904,7 @@ export declare class MxCADSelectionSet extends McRxObject {
 	 * ```
 	 *  */
 	private selectPt2;
+	private selectPoints;
 	/**
 	 * 构造函数
 	 * @example
@@ -2930,6 +2931,14 @@ export declare class MxCADSelectionSet extends McRxObject {
 		pt1: McGePoint3d;
 		pt2: McGePoint3d;
 	};
+	/**
+	* 返回选择点数组。
+	* @returns
+	* @example
+	* ```ts
+	* ```
+	* */
+	getSelectPoints(): McGePoint3d[];
 	/** 全选
 	 * @param filter 过滤对象
 	 * @example
@@ -3038,6 +3047,12 @@ export declare class MxCADSelectionSet extends McRxObject {
 	 * ```
 	 * */
 	item(lItem: number): McObjectId;
+	/** 清空选择集
+	 * @example
+	 * ```ts
+	 * ```
+	 * */
+	clear(): void;
 	/** 遍历已选中的实体
 	 * @example
 	 * ```ts
@@ -3081,6 +3096,7 @@ export declare class MxCADSelectionSet extends McRxObject {
 	 * ```
 	 *  */
 	userSelect(strPrompt?: string, filter?: MxCADResbuf | null, init?: (getPoint: MrxDbgUiPrPoint) => any): Promise<boolean>;
+	fenceSelect(strPrompt?: string, filter?: MxCADResbuf | null, init?: (getPoint: MrxDbgUiPrPoint) => any): Promise<boolean>;
 }
 /** MxCADUiPrBase 作为 MxCADUiPr* 系列的基类，提供了一些基础的功能。 */
 export declare class MxCADUiPrBase {
