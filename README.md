@@ -1,6 +1,6 @@
 # Quick Start
 
-> **mxcad must be used together with mxdraw.** If you are not familiar with the mxdraw library, please refer to: <https://mxcadx.gitee.io/mxdraw/>
+> **mxcad must be used together with mxdraw.** If you are not familiar with the mxdraw library, please refer to: <https://github.com/mxcad/mxdraw/>
 
 > **Contact:** 710714273@qq.com
 

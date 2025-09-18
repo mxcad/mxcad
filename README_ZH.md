@@ -1,7 +1,7 @@
 
 # 快速入门
 
-> mxcad必须和mxdraw一起使用 如果你不了解mxdraw库 请参考：<https://mxcadx.gitee.io/mxdraw/>
+> mxcad必须和mxdraw一起使用 如果你不了解mxdraw库 请参考：<https://github.com/mxcad/mxdraw/>
 
 > 联系方式: 710714273@qq.com
 
