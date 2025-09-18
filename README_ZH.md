@@ -1,16 +1,14 @@
 
 # 快速入门
 
-> mxcad必须和mxdraw一起使用 如果你不了解mxdraw库 请参考：<https://mxcadx.gitee.io/mxdraw_docs/>
+> mxcad必须和mxdraw一起使用 如果你不了解mxdraw库 请参考：<https://mxcadx.gitee.io/mxdraw/>
 
 > 联系方式: 710714273@qq.com
 
 ![](https://www.webcadsdk.com/img/WX-Two-dimensional-code.png)
 官网地址: <https://www.webcadsdk.com/>
 
-mxcad 支持渲染`.mxweb格式`的文件（该文件格式是我们特有的前端CAD格式），CAD图纸文件（DWG、DXF）可通过我们提供的[mxdraw云图开发包](https://help.mxdraw.com/?pid=32)中的图纸转换程序转换为`.mxweb文件`。经转换后的`.mxweb文件`会交由 mxcad 在网页中浏览编辑，编辑后的mxweb文件同样可以经图纸转换程序转换回CAD图纸文件格式。
-
-
+mxcad 支持渲染`.mxweb格式`的文件（该文件格式是我们特有的前端CAD格式），CAD图纸文件（DWG、DXF）可通过我们提供的[mxdraw云图开发包](https://help.mxdraw.com/?pid=32)中的图纸转换程序转换为`.mxweb文件`。经转换后的`.mxweb文件`会交由 mxcad 在网页中浏览编辑，编辑后的mxweb文件同样可以经图纸转换程序转换回CAD图纸文件
 
 ## 通过Vite使用mxcad
 
