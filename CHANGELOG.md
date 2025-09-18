@@ -1,5 +1,22 @@
 
 
+### 1.0.333 (2025-09-18)
+
+
+### ✨新功能
+
+* add some CAD call functions ([6b018f8](https://github.com/mxcad/mxcad_docs/commit/6b018f84b6e21a1c11cf7f03c963c4a7833b6147))
+
+
+### 🐛问题修复
+
+* fix pub init ([8c8deb1](https://github.com/mxcad/mxcad_docs/commit/8c8deb1a300da92ffa3c8c58f1d60ea968be6fd7))
+
+
+### 📚文档
+
+* update mxdraw link ([3a36014](https://github.com/mxcad/mxcad_docs/commit/3a36014cbcd70662f3f4663ad31f439222a1a150))
+
 * fix: 修复缺陷 (67bdea9)
 
 ### 1.0.150 (2023-12-14)
