@@ -10,6 +10,25 @@
 
 ### 🐛问题修复
 
+* finishing document ([1e91756](https://github.com/mxcad/mxcad_docs/commit/1e91756546aaac02407e31b31930a45e1b98b6fc))
+* fix pub init ([8c8deb1](https://github.com/mxcad/mxcad_docs/commit/8c8deb1a300da92ffa3c8c58f1d60ea968be6fd7))
+
+
+### 📚文档
+
+* update mxdraw link ([c55b802](https://github.com/mxcad/mxcad_docs/commit/c55b802851fd06ede698b29947072e8a47828e02))
+* update mxdraw link ([3a36014](https://github.com/mxcad/mxcad_docs/commit/3a36014cbcd70662f3f4663ad31f439222a1a150))
+
+### 1.0.333 (2025-09-18)
+
+
+### ✨新功能
+
+* add some CAD call functions ([6b018f8](https://github.com/mxcad/mxcad_docs/commit/6b018f84b6e21a1c11cf7f03c963c4a7833b6147))
+
+
+### 🐛问题修复
+
 * fix pub init ([8c8deb1](https://github.com/mxcad/mxcad_docs/commit/8c8deb1a300da92ffa3c8c58f1d60ea968be6fd7))
 
 
