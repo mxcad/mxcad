@@ -27,6 +27,7 @@ enum EnToZhDict {
     "Path" = "路径",
     "Block" = "图块",
     "Image" = "图片",
+    "Spline" = "样条线",
     "InteractiveDrawing" = "交互绘图",
     "CommandLine" = "命令行",
     "UIInteraction" = "UI交互",
@@ -90,7 +91,8 @@ enum EnToZhDict {
     "ElevationMarking" = "标高标注",
     "DrawAxisOfSymmetry" = "画对称轴",
     "ExtensionPluginSecondaryDevelopmentMap" = "扩展插件二次开发地图",
-    "MxCADAppNpmApplicationIntegration" = "MxCADApp Npm应用集成"
+    "MxCADAppNpmApplicationIntegration" = "MxCADApp Npm应用集成",
+    "AnnotationStyleSheet" = "标注样式表"
 }
 
 enum apiZhDict {
