@@ -1,5 +1,12 @@
 
 
+### 1.0.344 (2025-10-27)
+
+
+### 📚文档
+
+* 删除冗杂reademe文件 ([dbf6114](https://github.com/mxcad/mxcad_docs/commit/dbf6114d93b1e6f0e4a416585cde6d8409fb7e47))
+
 ### 1.0.344 (2025-10-24)
 
 
