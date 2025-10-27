@@ -1,0 +1,28 @@
+{
+  "name": "mxcad-webpack-v4",
+  "version": "1.0.0",
+  "description": "use mxcad webapck v4",
+  "private": true,
+  "module": "true",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack --mode=production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "8.2.2",
+    "babel-plugin-import": "^1.13.6",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "5",
+    "html-webpack-plugin": "^4.5.2",
+    "webpack": "4.46.0",
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "dependencies": {
+    "mxcad": "latest"
+  }
+}
