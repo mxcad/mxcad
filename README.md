@@ -5,6 +5,8 @@ If you have any questions during the use of mxcad, feel free to contact us. Cont
 
 Official mxcad website: <https://www.webcadsdk.com/>
 
+![mxcad示例](./docs/assets/en/img/mxcad示例.gif)
+
 # Quick Start with mxcad
 
 mxcad supports online rendering of `.mxweb` format files (this file format is our unique front-end CAD format). CAD drawing files (DWG, DXF) can be converted into .mxweb files via the drawing conversion program provided in our [mxdraw CloudDraw development package](https://www.webcadsdk.com/). The converted `.mxweb` files will be handed over to mxcad for browsing and editing in web pages. The edited `.mxweb` files can similarly be converted back into CAD drawing files through the drawing conversion program.

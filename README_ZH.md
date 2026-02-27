@@ -1,10 +1,11 @@
 
-<<<<<<< HEAD
 # 前言
 
 在使用mxcad的过程中如果有任何问题可以直接联系我们，联系方式: 710714273@qq.com
 
 mxcad官网地址: <https://www.webcadsdk.com/>
+
+![mxcad示例](./docs/assets/img/mxcad示例.gif)
 
 # mxcad快速入门
 
@@ -13,18 +14,6 @@ mxcad 支持在线渲染`.mxweb格式`的文件（该文件格式是我们特有
 CAD图纸文件转换为`.mxweb格式`具体转换步骤可参考下面的[图纸转换步骤](#图纸转换步骤)。
 
 mxcad的开发需要依赖mxdraw，两者需要配合使用，因此如果你不了解mxdraw库 请参考：<https://github.com/mxcad/mxdraw/>
-=======
-# 快速入门
-
-> mxcad必须和mxdraw一起使用 如果你不了解mxdraw库 请参考：<https://github.com/mxcad/mxdraw/>
-
-> 联系方式: 710714273@qq.com
-
-![](https://www.webcadsdk.com/img/WX-Two-dimensional-code.png)
-官网地址: <https://www.webcadsdk.com/>
-
-mxcad 支持渲染`.mxweb格式`的文件（该文件格式是我们特有的前端CAD格式），CAD图纸文件（DWG、DXF）可通过我们提供的[mxdraw云图开发包](https://help.mxdraw.com/?pid=32)中的图纸转换程序转换为`.mxweb文件`。经转换后的`.mxweb文件`会交由 mxcad 在网页中浏览编辑，编辑后的mxweb文件同样可以经图纸转换程序转换回CAD图纸文件
->>>>>>> 4def04d241cb791832d2b883e46331f0a81b1e1c
 
 ## 通过Vite使用mxcad
 
@@ -39,20 +28,11 @@ npm init -y
 npm install vite -D
 npm install mxcad
 ```
-<<<<<<< HEAD
 * 如果使用`pnpm`安装 还需要主动安装 mxdraw
 
   ```sh
   pnpm install mxdraw
   ```
-=======
-:::tip 注意
-如果使用`pnpm`安装 还需要主动安装 mxdraw
-```sh
-`pnpm install mxdraw`
-```
-:::
->>>>>>> 4def04d241cb791832d2b883e46331f0a81b1e1c
 
 2. 在项目根目录下新建index.html文件，并绘制canvas画布。
 
@@ -80,22 +60,15 @@ npm install mxcad
 ```ts
 import { McObject } from "mxcad"
 
-<<<<<<< HEAD
 // 将2d和2d-st 都放入静态资源中可以保证无论是否开启SharedArrayBuffer 都可以正常运行
 const mode = "SharedArrayBuffer" in window ? "2d" : "2d-st"
-=======
->>>>>>> 4def04d241cb791832d2b883e46331f0a81b1e1c
 // 创建mxcad示例对象
 const mxcad = new McObject()
 mxcad.create({
     // canvas元素的id
     canvas: "#myCanvas",
     // 获取加载wasm相关文件(wasm/js/worker.js)路径位置
-<<<<<<< HEAD
     locateFile: (fileName)=>  new URL(`/node_modules/mxcad/dist/wasm/${mode}/${fileName}`, import.meta.url).href,
-=======
-    locateFile: (fileName)=> new URL(`/node_modules/mxcad/dist/wasm/2d/${fileName}`, import.meta.url).href,
->>>>>>> 4def04d241cb791832d2b883e46331f0a81b1e1c
     // 需要初始化打开的文件url路径
     fileUrl: new URL("../src/assets/test.mxweb", import.meta.url).href,
     // 提供加载字体的目录路径
@@ -313,7 +286,6 @@ module.exports = {
  1. canvas：canvas画布实例的id名
 
  2. locateFile：mxcad 的核心依赖mxcad库中`/mxcad/dist/wasm`目录下对应分类(`2d`|`2d-st`)中的 wasm 文件(该文件是c++编译生成的)，其中 2d 目录下为多线程程序、2d-st 目录下为单线程程序，该参数用来指定 wasm 程序的**网络路径**。
-<<<<<<< HEAD
   
  3. fontspath：指定cad图纸中的字体文件加载路径。默认路径为`dist/fonts`，你可以在该目录中添加打开图纸需要的各种字体文件。
   
@@ -322,19 +294,6 @@ module.exports = {
 
  5. onOpenFileComplete：监听打开文件成功的回调事件，在图纸打开完成后进行的操作可在该方法内执行。
 
-=======
-
- 3. fontspath：指定cad图纸中的字体文件加载路径。默认路径为`dist/fonts`，你可以在该目录中添加打开图纸需要的各种字体文件。
-
- 4. fileUrl：指定打开mxweb图纸的**网络路径**。
-
- :::tip 提示
-  mxcad 中创建mxcad对象的 `create()` 函数中的参数 fontspath 、 fileUrl 包括 locateFile 的值均为**网络路径**。
- :::
-
- 5. onOpenFileComplete：监听打开文件成功的回调事件，在图纸打开完成后进行的操作可在该方法内执行。
- 
->>>>>>> 4def04d241cb791832d2b883e46331f0a81b1e1c
  6. viewBackgroundColor：设置视区背景颜色，值为rgb。
 
  7. browse：是否设置为浏览模式，值为true或1时启用浏览模式，且CAD对象不能选中；值为2时启用浏览模式，CAD对象能选中,但不能夹点编辑；值为false时启用编辑模式。
@@ -346,13 +305,8 @@ module.exports = {
  10. enableIntelliSelect：是否启用对象选择功能。设置为true则启用；设置为false则不启用。
 
  11. multipleSelect：是否启用多选。设置为true则启用；设置为false则不启用。
-<<<<<<< HEAD
 
  更多 createMxCad 初始化参数设置可参考[MxCadConfig 配置说明](https://mxcad.github.io/mxcad/en/api/interfaces/2d.MxCadConfig.html)。
-=======
- 
- 更多 createMxCad 初始化参数设置可参考[MxCadConfig 配置说明](../../api/interfaces/2d.MxCadConfig.md)。
->>>>>>> 4def04d241cb791832d2b883e46331f0a81b1e1c
 
 ### 多线程、单线程模式说明
 
@@ -382,7 +336,6 @@ mxobj.create({
    },
 })
 ```
-<<<<<<< HEAD
 * 若要使用 SharedArrayBuffer 权限，谷歌的浏览器要求使用HTTPS的协议访问或本地路径（http://localhost)。
 
 # 图纸转换步骤
@@ -473,11 +426,3 @@ sudo  cp -r -f ./mx/locale /usr/local/share/locale
 
 
    
-=======
-:::tip 提示
-若要使用 SharedArrayBuffer 权限，谷歌的浏览器要求使用HTTPS的协议访问或本地路径（http://localhost)。
-:::
-
-
-
->>>>>>> 4def04d241cb791832d2b883e46331f0a81b1e1c

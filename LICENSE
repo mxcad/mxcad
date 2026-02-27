@@ -1,8 +1,8 @@
 Custom License Agreement - mxcad
 
-Copyright © 2022 Chengdu Dream Cloud Technology Co., Ltd.
+Copyright © 2022 Chengdu Dreamkaide Technology Co., Ltd.
 
-This license agreement ("Agreement") is made by and between Chengdu Dream Cloud Technology Co., Ltd. ("Licensor") and the user of the software named "mxcad" ("User"). By using the Software, User agrees to be bound by the terms and conditions set forth in this Agreement.
+This license agreement ("Agreement") is made by and between Chengdu Dreamkaide Technology Co., Ltd. ("Licensor") and the user of the software named "mxcad" ("User"). By using the Software, User agrees to be bound by the terms and conditions set forth in this Agreement.
 
 1. **Non-Commercial Use**: The Software is intended for non-commercial use only. Non-commercial use refers to the utilization of the Software without the intent to generate profit, including but not limited to personal learning, research, and testing. You may freely use, study, test, modify, and redistribute the source code of the Software for non-commercial purposes without any restrictions.
 
@@ -12,11 +12,11 @@ This license agreement ("Agreement") is made by and between Chengdu Dream Cloud 
 
 4. **Watermark Retention**: All watermarks, logos, and brand elements within the Software must remain intact and unaltered. Violation of this clause will result in immediate termination of this License.
 
-5. **Commercial Use**: Unless you have entered into a separate commercial license agreement with Chengdu Dream Cloud Technology Co., Ltd. and obtained written permission, you are prohibited from using the Software for commercial purposes. If you have not signed such an agreement, you do not have the right to use the Software commercially. For inquiries about commercial licenses, please contact the Licensor for more information.
+5. **Commercial Use**: Unless you have entered into a separate commercial license agreement with Chengdu Dreamkaide Technology Co., Ltd. and obtained written permission, you are prohibited from using the Software for commercial purposes. If you have not signed such an agreement, you do not have the right to use the Software commercially. For inquiries about commercial licenses, please contact the Licensor for more information.
 
 6. **Disclaimer of Warranty**: The Software is provided "AS IS" without warranty of any kind, express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the Licensor be liable for any claims, damages, or other liabilities arising out of or in connection with the Software or its use, whether based on contract, tort, or any other theory. This disclaimer does not affect any consumer rights you may have under applicable Chinese law.
 
-7. **Commercial Licensing**: Users who have signed a purchase contract with Chengdu Dream Cloud Technology Co., Ltd. are governed by that contract if it conflicts with this License. Users who have not signed such a contract are exclusively governed by this License. Specific terms of commercial licensing, such as licensing fees and validity period, will be detailed in the commercial license agreement.
+7. **Commercial Licensing**: Users who have signed a purchase contract with Chengdu Dreamkaide Technology Co., Ltd. are governed by that contract if it conflicts with this License. Users who have not signed such a contract are exclusively governed by this License. Specific terms of commercial licensing, such as licensing fees and validity period, will be detailed in the commercial license agreement.
 
 
 8. ** Contact information ** : For commercial license inquiries, please contact:
@@ -31,8 +31,14 @@ This license agreement ("Agreement") is made by and between Chengdu Dream Cloud 
     - The Licensor reserves the right to amend the terms and conditions of this License at any time. Amendments will be notified to users through the official website or other appropriate means.
     - The User may terminate this License at any time by ceasing to use the Software. Upon termination, the User must destroy all copies of the Software and any derivative works.
 
-11. **Intellectual Property Statement**: The Software and all related intellectual property rights (including but not limited to patents, copyrights, trademarks, and trade secrets) are owned by Chengdu Dream Cloud Technology Co., Ltd. Without the written consent of the Licensor, the User may not infringe or attempt to infringe these rights in any manner.
+11. **Intellectual Property Statement**: The Software and all related intellectual property rights (including but not limited to patents, copyrights, trademarks, and trade secrets) are owned by Chengdu Dreamkaide Technology Co., Ltd. Without the written consent of the Licensor, the User may not infringe or attempt to infringe these rights in any manner.
+
+12. **Third-Party Open Source Components**:
+
+The Software incorporates certain third-party open source components, each of which is governed by its own license terms and owned by its respective authors or rights holders. A complete list of these components, including their names, versions, applicable licenses, and original copyright notices, is provided in the accompanying file THIRD-PARTY-NOTICES.txt.
+
+You are solely responsible for complying with the terms of the applicable third-party licenses. This License Agreement does not apply to any such third-party components, and your rights to use them are exclusively as granted under their respective open source licenses.
 
 By using the Software, you acknowledge that you have read and understood this License Agreement and agree to be bound by its terms and conditions.
 
-Chengdu Dream Cloud Technology Co., Ltd.
+Chengdu Dreamkaide Technology Co., Ltd.
