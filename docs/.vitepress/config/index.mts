@@ -92,7 +92,21 @@ enum EnToZhDict {
     "DrawAxisOfSymmetry" = "画对称轴",
     "ExtensionPluginSecondaryDevelopmentMap" = "扩展插件二次开发地图",
     "MxCADAppNpmApplicationIntegration" = "MxCADApp Npm应用集成",
-    "AnnotationStyleSheet" = "标注样式表"
+    "AnnotationStyleSheet" = "标注样式表",
+    "RelatedArticles" = "相关文章",
+    "IntroductionGuide" = "入门指南",
+    "MxCAD Product Introduction" = "MxCAD 产品介绍",
+    "Cloud Map Development Kit Instructions" = "云图开发包使用说明",
+    "CADFunctionDevelopment" = "CAD 功能开发",
+    "ApplicationIntegration" = "应用集成",
+    "MxCAD-App Integration Instructions" = "mxcad-app集成说明",
+    "MxCAD can draw barcodes and QR codes" = "mxcad绘制条形码、二维码",
+    "MxCAD App calls the internal pop-up box" = "MxCAD APP调用内部弹框",
+    "A detailed introduction to the configuration properties of CAD projects in MxCAD" = "mxcad对CAD项目配置属性的详细介绍",
+    "MxCAD Multi-Line Text Extension" = "MxCAD多行文本扩展",
+    "Development of group-related functions in MxCAD" = "mxcad中组相关功能开发",
+    "The plug-in in the MxCAD project is referred to as MxPluginContext" = "MxCAD项目中的插件上文MxPluginContext",
+    "The MxCAD software enables the function of drawing roughness annotations" = "mxcad实现绘制粗糙度标注功能"
 }
 
 enum apiZhDict {
