@@ -106,7 +106,8 @@ enum EnToZhDict {
     "MxCAD Multi-Line Text Extension" = "MxCAD多行文本扩展",
     "Development of group-related functions in MxCAD" = "mxcad中组相关功能开发",
     "The plug-in in the MxCAD project is referred to as MxPluginContext" = "MxCAD项目中的插件上文MxPluginContext",
-    "The MxCAD software enables the function of drawing roughness annotations" = "mxcad实现绘制粗糙度标注功能"
+    "The MxCAD software enables the function of drawing roughness annotations" = "mxcad实现绘制粗糙度标注功能",
+    "Drawing Conversion Function Usage Guide" = "图纸转换详细说明"
 }
 
 enum apiZhDict {
@@ -252,6 +253,7 @@ export default defineConfig({
         },
     },
     themeConfig: {
+        outline: [1,3],
         search: {
             provider: 'local',
             options: {
