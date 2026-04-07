@@ -635,6 +635,7 @@ export declare class McDbObject extends McRxObject {
 	 */
 	getGripPoints(): McGePoint3dArray;
 	/**
+<<<<<<< HEAD
 	* 获取对象的夹点对应的编辑基点索引。
 	* @example
 	* ```ts
@@ -642,6 +643,8 @@ export declare class McDbObject extends McRxObject {
 	*/
 	getGripEditBasePointsIndex(): number[];
 	/**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	* @internal
 	* MxCAD辅助,内部使用
 	* ```
@@ -2663,7 +2666,11 @@ export declare class MxCADUtilityClass {
 	 * @param dX - 坐标点的 X 坐标值
 	 * @param dY - 坐标点的 Y 坐标值
 	 * @param dZ - 坐标点的 Z 坐标值
+<<<<<<< HEAD
 	 * @param dSearhRange - 设置选取范围，默认为 -1  表示自适应，或者输入对应的CAD坐标长度
+=======
+	 * @param dSearhRange - 查找范围，默认为 -1（表示查找整个绘图区域）
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	 * @param filter - 过滤器，用于过滤查找到的图形对象，默认为 null（表示不进行过滤）
 	 * @returns 返回查找到的图形对象的 ID
 	 * @example
@@ -4321,6 +4328,7 @@ export declare class McDbEntity extends McDbObject {
 	 */
 	set linetype(val: string);
 	/**
+<<<<<<< HEAD
 	 * 得到对象厚度
 	 */
 	get thickness(): number;
@@ -4329,6 +4337,8 @@ export declare class McDbEntity extends McDbObject {
 	*/
 	set thickness(val: number);
 	/**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	 * 得到对象线型比例
 	 */
 	get linetypeScale(): number;
@@ -5247,7 +5257,11 @@ export declare class McDbCurve extends McDbEntity {
 	 * ```ts
 	 * import { MxCpp, MxCADResbuf, MxCADUtility, MxCADUiPrPoint} from "mxcad"
 	
+<<<<<<< HEAD
 	 *  const mxcad = MxCpp.App.MxCAD();
+=======
+	 *  const mxcad = MxCpp.App.getCurrentMxCAD();
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 		let filter = new MxCADResbuf();
 		filter.AddMcDbEntityTypes("CIRCLE,ARC,LINE,LWPOLYLINE,ELLIPSE");
 		let aryId = await MxCADUtility.userSelect("选择目标曲线", filter);
@@ -7723,6 +7737,7 @@ export declare class McDbArc extends McDbCurve {
 	 * ```
 	 */
 	computeArc(dStartPointX: number, dStartPointY: number, dMidPointX: number, dMidPointY: number, dEndPointX: number, dEndPointY: number): boolean;
+<<<<<<< HEAD
 	/**
 	 * 修正被镜向的圆弧
 	 * @example
@@ -7730,6 +7745,8 @@ export declare class McDbArc extends McDbCurve {
 	 * ```
 	 */
 	correctMirror(): boolean;
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 }
 /**
  * 表示椭圆椭圆弧实体。它包含了创建、修改了获取椭圆椭圆弧属性的方法。
@@ -8578,6 +8595,7 @@ export declare class McDbRasterImage extends McDbEntity {
 	 * }
 	 * ```
 	 */
+<<<<<<< HEAD
 	setClipBoundary(type: McDb.ClipBoundaryType, aryPoint: McGePoint3dArray, isWroldCoords?: boolean): boolean;
 	/**
 	 * 图片是否使用剪切边界
@@ -8593,6 +8611,9 @@ export declare class McDbRasterImage extends McDbEntity {
 	* ```
 	*/
 	setClip(isClip: boolean): void;
+=======
+	setClipBoundary(type: McDb.ClipBoundaryType, aryPoint: McGePoint3dArray): boolean;
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	/**
 	 * 获取图像对象的裁剪边界
 	 * @example
@@ -8736,6 +8757,7 @@ export declare class McDbSpline extends McDbCurve {
 	}): boolean;
 }
 /**
+<<<<<<< HEAD
  * 表示一个射线对象。
  * @example
  * ```ts
@@ -8962,6 +8984,8 @@ export declare class McDbMxRegion extends McDbEntity {
 	copyData(fromRegion: McDbMxRegion): boolean;
 }
 /**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
  * Dxf组码
  * @public
  */
@@ -9007,6 +9031,7 @@ export declare namespace McDb {
 		k3dPolyline = 2
 	}
 	/**
+<<<<<<< HEAD
 	 * 面域bool运行类型
 	 * @public
 	 */
@@ -9017,6 +9042,8 @@ export declare namespace McDb {
 		Xor = 3
 	}
 	/**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	 * 文本水平对齐方式枚举。
 	 * @public
 	 */
@@ -11843,6 +11870,7 @@ export declare class McObjectTempDraw {
 	 */
 	readyMcDbEntitysWorldDraw(): void;
 	/**
+<<<<<<< HEAD
 	 * 结束对McDbEntitys的临时绘制的上下文，释放资源。
 	 * @example
 	 * ```ts
@@ -11850,6 +11878,8 @@ export declare class McObjectTempDraw {
 	 */
 	endMcDbEntitysWorldDraw(): void;
 	/**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	* 清除McDbEntitys临时绘制的数据
 	* @example
 	* ```ts
@@ -11871,6 +11901,7 @@ export declare class McObjectTempDraw {
 	 */
 	disableDepthTestMcDbEntitysDisplay(isDisable?: boolean): void;
 	/**
+<<<<<<< HEAD
 	 * 启用线重的显示。
 	 * @example
 	 * ```ts
@@ -11878,6 +11909,8 @@ export declare class McObjectTempDraw {
 	 */
 	setLineWeightDisplay(val?: boolean, iGlobalLineweight?: number): void;
 	/**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	 * 添加临时绘制线条数据
 	 * @example
 	 * ```ts
@@ -11911,7 +11944,11 @@ export declare class McObjectTempDraw {
 	* ```ts
 	* ```
    */
+<<<<<<< HEAD
 	setDrawColor(color: number, iMcDbEntityDrawColor?: number): void;
+=======
+	setDrawColor(color: number): void;
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 }
 declare class McRxObjectImp {
 }
@@ -11921,7 +11958,10 @@ declare class McRxObjectImp {
 export declare class McObject {
 	/** 内部对象实现 */
 	private imp;
+<<<<<<< HEAD
 	private cooperate;
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	/** 内部事件 */
 	private event;
 	/** 当前打开的文件名 */
@@ -11956,6 +11996,7 @@ export declare class McObject {
 	*/
 	getTempDraw(): McObjectTempDraw;
 	/**
+<<<<<<< HEAD
 	 * 返回协同工作对象
 	 * @example
 	 * ```ts
@@ -11963,6 +12004,8 @@ export declare class McObject {
 	*/
 	getCooperate(): MxCooperate;
 	/**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	 * 判断层是不是一个在使用的有用层，删除一个层之前调用该函数判断一下。
 	 * @example
 	 * ```ts
@@ -12198,7 +12241,11 @@ export declare class McObject {
 	 * mxcad.addCurrentSelect(id);
 	 * ```
 	 */
+<<<<<<< HEAD
 	addCurrentSelect(id: McObjectId | McObjectId[], isDisplayGrid?: boolean, fireSelectEvent?: boolean): void;
+=======
+	addCurrentSelect(id: McObjectId | McObjectId[], isDisplayGrid?: boolean): void;
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	/**
 	 * 清除当前所有选择
 	 * @example
@@ -12211,6 +12258,7 @@ export declare class McObject {
 	*/
 	clearMxCurrentSelect(): void;
 	/**
+<<<<<<< HEAD
 	* 清除显示的夹点
 	* @returns void
 	* @example
@@ -12221,6 +12269,8 @@ export declare class McObject {
 	*/
 	clearGripDisplay(): void;
 	/**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	  * 把当前显示范围移到指定的显示范围
 	  * @param minPt 坐标1 McGePoint3d
 	  * @param maxPt 坐标2 McGePoint3d
@@ -12262,7 +12312,10 @@ export declare class McObject {
 	 * @param sFileUrl 网络文件路径
 	 * @param retCall 回调函数，可选参数，打开文件完成后的回调函数，参数为打开文件的结果,0表示成功，其他值表示失败
 	 * @param isWorkThread 是否使用工作线程打开文件，默认为 true
+<<<<<<< HEAD
 	 * @param obj_param: 打开参数，比如传一个请求头{requestHeaders:{aaa:"xxxxx"}}
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	 * @param fetchAttributes 1：EMSCRIPTEN_FETCH_LOAD_TO_MEMORY,把图纸数据加载内存中，0:EMSCRIPTEN_FETCH_LOAD_TO_MEMORY | EMSCRIPTEN_FETCH_PERSIST_FILE | EMSCRIPTEN_FETCH_APPEND，把图纸数据加到IndexedDB。
 	 * @returns 是否成功打开文件
 	 * @example
@@ -12272,7 +12325,11 @@ export declare class McObject {
 	 * mxcad.openWebFile("http://localhost:1337/mxcad/file/a9cbed3d3a351b79f24484e87bd78338.DWG.mxweb");
 	 * ```
 	 */
+<<<<<<< HEAD
 	openWebFile(sFileUrl: string, retCall?: (iRet: number) => void, isWorkThread?: boolean, obj_param?: object, fetchAttributes?: number, isFetchTzFile?: boolean): boolean;
+=======
+	openWebFile(sFileUrl: string, retCall?: (iRet: number) => void, isWorkThread?: boolean, initialParameter?: object, fetchAttributes?: number, isFetchTzFile?: boolean): boolean;
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	/**
 	* 清空当前图上内容，新建一个文件
 	* @example
@@ -12945,6 +13002,7 @@ export declare class McObject {
 	 */
 	loadImage(imageUrl: string, call: (image: any) => void, imageFileName?: string, fileType?: string): void;
 	/**
+<<<<<<< HEAD
 	* 加载Base64图片。
 	* @param imageUrl 图片路径
 	* @param call 回调函数
@@ -12966,6 +13024,8 @@ export declare class McObject {
 	*/
 	loadImageBase64(sImageBase64: string, imageFileName: string, call: (image: any) => void): void;
 	/**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	 * 绘制一个图片
 	 * @param dPosX 图片 X 坐标
 	 * @param dPosY 图片 Y 坐标
@@ -13382,10 +13442,13 @@ export declare class McObject {
 	*/
 	getCurrentLayoutId(): McObjectId;
 	/**
+<<<<<<< HEAD
 	* 得到当前openWebFile打开的文件，的文件名，如果打开是一个流数据，该变量会取服务器返回请求头的filename的值。
 	*/
 	GetDocumentFileName(): string;
 	/**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	 * 返加MxCpp对象，它会在MxDraw模块中调用。
 	*/
 	getMxCpp(): any;
@@ -14268,6 +14331,7 @@ export declare class MxCADTempForbiddenIntelliSelect {
 	restoreSettings(): void;
 }
 /**
+<<<<<<< HEAD
  * 协同工作
  */
 export declare class MxCooperate {
@@ -14304,6 +14368,8 @@ export declare class MxCooperate {
 	onEvent(retCall: (eventName: string, iRet: number) => void): void;
 }
 /**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
  * 指定执行克隆操作时的行为类型
  */
 export declare enum MxCADCloneType {
@@ -14699,11 +14765,14 @@ export declare abstract class McDbCustomEntity extends McDbEntity {
 	 */
 	getGripPoints(): McGePoint3dArray;
 	/**
+<<<<<<< HEAD
 	 * 获取自定义对象的夹点。
 	 * @returns 夹点对象数组
 	 */
 	getGripEditBasePointsIndex(): number[];
 	/**
+=======
+>>>>>>> 7d532a2a1f49ae5e44658a56ecf3d10cefdd4e7e
 	 * 获取自定义对象矩阵坐标变换
 	 */
 	transformBy(_mat: McGeMatrix3d): boolean;
