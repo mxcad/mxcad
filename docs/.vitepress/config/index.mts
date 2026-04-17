@@ -109,7 +109,8 @@ enum EnToZhDict {
     "The MxCAD software enables the function of drawing roughness annotations" = "mxcad实现绘制粗糙度标注功能",
     "Drawing Conversion Function Usage Guide" = "图纸转换详细说明",
     "MxDraw Web Preview & Annotation" = "MxCAD/MxDraw Web 预览批注实战",
-    "Implementation of View Control and Layer Management System" = "视图控制与图层管理系统实现"
+    "Implementation of View Control and Layer Management System" = "视图控制与图层管理系统实现",
+    "Command-line drive and parameterized plotting" = "命令行驱动与参数化绘图",
 }
 
 enum apiZhDict {
