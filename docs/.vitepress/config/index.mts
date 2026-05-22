@@ -111,6 +111,8 @@ enum EnToZhDict {
     "MxDraw Web Preview & Annotation" = "MxCAD/MxDraw Web 预览批注实战",
     "Implementation of View Control and Layer Management System" = "视图控制与图层管理系统实现",
     "Command-line drive and parameterized plotting" = "命令行驱动与参数化绘图",
+    "From Viewing Drawings to Editing Drawings" = "从浏览图纸到编辑图纸",
+    "MxCAD enables the saving of drawings" = "mxcad实现图纸保存功能",
 }
 
 enum apiZhDict {
