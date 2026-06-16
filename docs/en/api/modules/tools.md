@@ -28,6 +28,7 @@ import { getJsonFromUrl } from "mxcad"
 - [b64Encode](tools.md#b64encode)
 - [crateHexString](tools.md#cratehexstring)
 - [createCursor](tools.md#createcursor)
+- [createMdGeLongLongArrayFormAryId](tools.md#createmdgelonglongarrayformaryid)
 - [downloadFile](tools.md#downloadfile)
 - [downloadFileFromUrl](tools.md#downloadfilefromurl)
 - [getFileFromUrl](tools.md#getfilefromurl)
@@ -51,6 +52,7 @@ import { getJsonFromUrl } from "mxcad"
 | `b64Decode` | (`str`: `string`) => `string` |
 | `b64Encode` | (`str`: `string`) => `string` |
 | `createCursor` | (`cursorSize`: `number`, `targetFrameSize`: `number`, `color`: `string`) => `any` |
+| `createMdGeLongLongArrayFormAryId` | (`aryId`: [`McObjectId`](../classes/2d.McObjectId.md)[]) => `any` |
 | `downloadFile` | (`blob`: `any`, `filename`: `string`) => `void` |
 | `downloadFileFromUrl` | (`url`: `string`, `filename`: `string`) => `void` |
 | `getFileFromUrl` | (`url`: `string`) => [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`undefined` \| [`Response`]( https://developer.mozilla.org/docs/Web/API/Response )\> |
@@ -169,6 +171,22 @@ ___
 | `cursorSize` | `number` | `128` |
 | `targetFrameSize` | `number` | `10` |
 | `color` | `string` | `"#ffffff"` |
+
+#### Returns
+
+`any`
+
+___
+
+### createMdGeLongLongArrayFormAryId
+
+▸ **createMdGeLongLongArrayFormAryId**(`aryId`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `aryId` | [`McObjectId`](../classes/2d.McObjectId.md)[] |
 
 #### Returns
 

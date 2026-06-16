@@ -113,6 +113,7 @@ enum EnToZhDict {
     "Command-line drive and parameterized plotting" = "命令行驱动与参数化绘图",
     "From Viewing Drawings to Editing Drawings" = "从浏览图纸到编辑图纸",
     "MxCAD enables the saving of drawings" = "mxcad实现图纸保存功能",
+    "Detailed Explanation of MxServiceCode" = "MxServiceCode详解",
 }
 
 enum apiZhDict {

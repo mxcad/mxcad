@@ -3314,5 +3314,13 @@
   "- 'middle': 垂直居中\r": "-'middle ': vertically centered",
   "- 'bottom': 底部对齐": "-'bottom': bottom alignment",
   "[mxcad_2d API 文档](../README.md) / [2d](../modules/2d.md) / IXlsxTableData": "[mxcad_2d API documentation] (../README. md)/[2d] (../modules/2d. md)/IXlsxTableData",
-  "XLSX表格数据接口": "XLSX Table Data Interface"
+  "XLSX表格数据接口": "XLSX Table Data Interface",
+  "获取 resbuf 数据项中的 ObjectId 值。": "Retrieve the Object Id value from the respuff data item.",
+  "得到cpp转过的id value": "Obtain the ID value rotated by CPP",
+  "是否加载64位的wasm,默认加载32位": "Should 64 bit wasm be loaded? 32-bit is loaded by default",
+  "| `call?` | (`MxCpp`: [`MxCppType`](../classes/2d.MxCppType.md)) => `void` | `undefined` | 回调函数，在加载完成后执行 |": "| `call? `| (` MxCpp `: [` MxCppType `] (../classes/2d. MxCppType. md))=>` void ` | ` undefined ` | The callback function is executed after loading is complete|",
+  "| `locateFile` | `any` | `undefined` | 函数用于确定 wasm 文件的位置，这里提供了一个默认的值 |": "|The ` locateFile ` | ` any ` | ` undefined ` | function is used to determine the location of the wasm file, and a default value is provided here|",
+  "| `wasmBinary?` | [`ArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer ) | `undefined` | wasm 二进制数据 |": "| `wasmBinary? ` | [`ArrayBuffer`](  https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer ）| ` undefined ` | Wasm binary data|",
+  "| `fontspath?` | `string` | `undefined` | 字体文件的路径 |": "| `fontspath? `| ` string ` | ` undefined ` | Path to font file|",
+  "| `networkFonts?` | `string`[] | `undefined` | 网络字体的数组 |": "| `networkFonts? `| ` string ` [] | ` undefined ` | Array of network fonts|"
 }
