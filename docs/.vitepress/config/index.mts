@@ -114,6 +114,8 @@ enum EnToZhDict {
     "From Viewing Drawings to Editing Drawings" = "从浏览图纸到编辑图纸",
     "MxCAD enables the saving of drawings" = "mxcad实现图纸保存功能",
     "Detailed Explanation of MxServiceCode" = "MxServiceCode详解",
+    "MxCADFunctionIntroduction" = "MxCAD功能介绍",
+    "Professional CAD in the browser" = "浏览器中的专业CAD",
 }
 
 enum apiZhDict {

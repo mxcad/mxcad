@@ -3322,5 +3322,13 @@
   "| `locateFile` | `any` | `undefined` | 函数用于确定 wasm 文件的位置，这里提供了一个默认的值 |": "|The ` locateFile ` | ` any ` | ` undefined ` | function is used to determine the location of the wasm file, and a default value is provided here|",
   "| `wasmBinary?` | [`ArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer ) | `undefined` | wasm 二进制数据 |": "| `wasmBinary? ` | [`ArrayBuffer`](  https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer ）| ` undefined ` | Wasm binary data|",
   "| `fontspath?` | `string` | `undefined` | 字体文件的路径 |": "| `fontspath? `| ` string ` | ` undefined ` | Path to font file|",
-  "| `networkFonts?` | `string`[] | `undefined` | 网络字体的数组 |": "| `networkFonts? `| ` string ` [] | ` undefined ` | Array of network fonts|"
+  "| `networkFonts?` | `string`[] | `undefined` | 网络字体的数组 |": "| `networkFonts? `| ` string ` [] | ` undefined ` | Array of network fonts|",
+  "返回dwg文件中的图片的宽高像素。": "Return the width, height, and pixels of the image in the DWG file.",
+  "设置保存dwg文件时，图片的宽高像素。": "Set the width, height, and pixels of the image when saving DWG files.",
+  "获取图像的定义ID": "Obtain the definition ID of the image",
+  "返回上一次的输入点。": "Return to the previous input point.",
+  "| `pt` | `undefined` \\| [`McGePoint3d`](2d.McGePoint3d.md) | 点对象 |": "|Pt | undefined \\ | [McGePoint3d] (2d. McGePoint3d. md) | Point Object|",
+  "   //画图片\r": "//Draw pictures",
+  "   // 创建新画布\r": "//Create a new canvas",
+  "   //图片地址\r": "//Image address"
 }
